@@ -159,8 +159,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Platform\NativeApplication.cpp" />
-    <ClCompile Include="Platform\NativeWindow.cpp" />
+    <ClCompile Include="Platform\Application.cpp" />
+    <ClCompile Include="Platform\Rendering\RPrimitiveRenderer.cpp" />
+    <ClCompile Include="Platform\Window.cpp" />
     <ClCompile Include="Relyt.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,13 +171,19 @@
     <ClInclude Include="Containers\Map.h" />
     <ClInclude Include="Containers\Set.h" />
     <ClInclude Include="Containers\String.h" />
+    <ClInclude Include="Graphics\GBrush.h" />
+    <ClInclude Include="Graphics\GWidget.h" />
+    <ClInclude Include="Math\Color.h" />
     <ClInclude Include="Math\MinMax.h" />
     <ClInclude Include="Math\RelytMath.h" />
+    <ClInclude Include="Math\Vector2.h" />
     <ClInclude Include="Platform\Memory.h" />
-    <ClInclude Include="Platform\NativeApplication.h" />
-    <ClInclude Include="Platform\NativeWindow.h" />
+    <ClInclude Include="Platform\Application.h" />
+    <ClInclude Include="Platform\Rendering\RPrimitiveRenderer.h" />
+    <ClInclude Include="Platform\Window.h" />
     <ClInclude Include="PreprocessorHelpers.h" />
     <ClInclude Include="PrimitiveTypes.h" />
+    <ClInclude Include="Templates\IsFloatingPoint.h" />
     <ClInclude Include="Templates\IsPointer.h" />
     <ClInclude Include="Templates\IsSigned.h" />
     <ClInclude Include="Templates\NumericLimits.h" />

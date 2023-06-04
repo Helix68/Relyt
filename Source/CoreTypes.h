@@ -43,16 +43,14 @@
 // True when compiled for x86, otherwise false when compiling for x64.
 #define PLATFORM_32BITS					(!PLATFORM_64BITS)
 
+/* Invalid index */
 enum { INDEX_NONE = -1 };
-enum { UNICODE_BOM = 0xfeff };
 
-enum EForceInit
+/* Use this enum in a constructor add the ability to force initialization on its members */
+enum ForceInitType
 {
-	ForceInit,
-	ForceInitToZero
+	ForceInit
 };
-enum ENoInit { NoInit };
-enum EInPlace { InPlace };
 
 // Created a variable with a unique name
 #define ANONYMOUS_VARIABLE( Name ) PREPROCESSOR_JOIN(Name, __COUNTER__)

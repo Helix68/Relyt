@@ -1,27 +1,28 @@
 
-#include "NativeApplication.h"
+#include "Platform/Application.h"
+#include "Platform/Window.h"
 
-#include "NativeWindow.h"
+const TCHAR RApplication::ClassName[] = TEXT("RelytApp");
 
-RNativeApplication* NativeApplication;
+RApplication* NativeApplication;
 
-RNativeApplication* RNativeApplication::Create()
+RApplication* RApplication::Create()
 {
-	NativeApplication = new RNativeApplication();
+	NativeApplication = new RApplication();
 	return NativeApplication;
 }
 
-RNativeApplication& RNativeApplication::Get()
+RApplication& RApplication::Get()
 {
     return *NativeApplication;
 }
 
-bool RNativeApplication::NeedsExit()
+bool RApplication::NeedsExit()
 {
     return bNeedsExit;
 }
 
-void RNativeApplication::PumpMessages()
+void RApplication::PumpMessages()
 {
     MSG msg = { };
     while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
@@ -31,12 +32,12 @@ void RNativeApplication::PumpMessages()
     }
 }
 
-LRESULT RNativeApplication::StaticWndProc(HWND hwnd, uint32 msg, WPARAM wParam, LPARAM lParam)
+LRESULT RApplication::StaticWndProc(HWND hwnd, uint32 msg, WPARAM wParam, LPARAM lParam)
 {
     return NativeApplication->WndProc(hwnd, msg, wParam, lParam);
 }
 
-LRESULT RNativeApplication::WndProc(HWND hwnd, uint32 msg, WPARAM wParam, LPARAM lParam)
+LRESULT RApplication::WndProc(HWND hwnd, uint32 msg, WPARAM wParam, LPARAM lParam)
 {
     switch (msg)
     {
@@ -72,14 +73,14 @@ LRESULT RNativeApplication::WndProc(HWND hwnd, uint32 msg, WPARAM wParam, LPARAM
     return DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
-RNativeApplication::RNativeApplication()
+RApplication::RApplication()
     : bNeedsExit(false)
 {
     WNDCLASS wc = { };
 
     wc.lpfnWndProc = StaticWndProc;
     wc.hInstance = GetModuleHandle(NULL);
-    wc.lpszClassName = RNativeWindow::AppWindowClass;
+    wc.lpszClassName = ClassName;
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 
     RegisterClass(&wc);

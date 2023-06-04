@@ -4,18 +4,17 @@
 
 #include "CoreTypes.h"
 
-#include "Platform/NativeApplication.h"
-#include "Platform/NativeWindow.h"
+#include "Platform/Application.h"
+#include "Platform/Window.h"
 #include "Platform/WindowsHWrapper.h"
 
 #include "Char.h"
 
 int32 WINAPI WinMain(_In_ HINSTANCE hInInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ char* pCmdLine, _In_ int32 nCmdShow)
 {
-    RNativeApplication* App = RNativeApplication::Create();
-
-    RNativeWindow* NativeWindow = new RNativeWindow(TEXT("Relyt"));
-    NativeWindow->Show();
+    RApplication* App = RApplication::Create();
+    RWindow* Window = new RWindow(TEXT("Relyt"));
+    Window->Show();
 
     while (!App->NeedsExit())
     {
@@ -24,4 +23,3 @@ int32 WINAPI WinMain(_In_ HINSTANCE hInInstance, _In_opt_ HINSTANCE hPrevInstanc
 
     return 0;
 }
-

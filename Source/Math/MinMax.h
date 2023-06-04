@@ -2,9 +2,6 @@
 
 #include "PrimitiveTypes.h"
 
-/* Numeric constants
- *****************************************************************************/
-
 #define MIN_uint8		((uint8)	0x00)
 #define	MIN_uint16		((uint16)	0x0000)
 #define	MIN_uint32		((uint32)	0x00000000)

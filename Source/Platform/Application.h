@@ -4,15 +4,17 @@
 
 #include "WindowsHWrapper.h"
 
-class RNativeApplication
+class RApplication
 {
 public:
 
+	static const TCHAR ClassName[];
+
 	/* Creates a new instance */
-	static RNativeApplication* Create();
+	static RApplication* Create();
 
 	/* Gets the singleton instance */
-	static RNativeApplication& Get();
+	static RApplication& Get();
 
 	bool NeedsExit();
 
@@ -22,7 +24,7 @@ private:
 	static LRESULT CALLBACK StaticWndProc(HWND hwnd, uint32 msg, WPARAM wParam, LPARAM lParam);
 	LRESULT WndProc(HWND hwnd, uint32 msg, WPARAM wParam, LPARAM lParam);
 
-	RNativeApplication();
+	RApplication();
 
 	bool bNeedsExit;
 };
