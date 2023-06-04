@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Relyt.cpp" />
+    <ClCompile Include="Platform\NativeWindow.cpp" />
+    <ClCompile Include="Platform\NativeApplication.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Containers\String.h" />
+    <ClInclude Include="Containers\Array.h" />
+    <ClInclude Include="Containers\Set.h" />
+    <ClInclude Include="Containers\Map.h" />
+    <ClInclude Include="CoreTypes.h" />
+    <ClInclude Include="PreprocessorHelpers.h" />
+    <ClInclude Include="Platform\WindowsHWrapper.h" />
+    <ClInclude Include="Math\RelytMath.h" />
+    <ClInclude Include="Platform\NativeWindow.h" />
+    <ClInclude Include="Templates\RemoveReference.h" />
+    <ClInclude Include="Templates\IsPointer.h" />
+    <ClInclude Include="Templates\RemoveCV.h" />
+    <ClInclude Include="Templates\IsSigned.h" />
+    <ClInclude Include="PrimitiveTypes.h" />
+    <ClInclude Include="Char.h" />
+    <ClInclude Include="Math\MinMax.h" />
+    <ClInclude Include="Templates\NumericLimits.h" />
+    <ClInclude Include="Templates\TypeCompatibleBytes.h" />
+    <ClInclude Include="Platform\Memory.h" />
+    <ClInclude Include="Platform\NativeApplication.h" />
+  </ItemGroup>
+</Project>
